@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TCF — The Beaver Gazette</title>
+  <meta name="description" content="TCF template with IAB vendors and purposes layered on top of the EU consent flow.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =====================================================================
+       PASTE THE USERCENTRICS CMP SCRIPT FOR THE "TCF" TEMPLATE HERE
+       (IAB Transparency & Consent Framework — European Union · ad-tech vendors)
+
+       Use the loader snippet from the Usercentrics admin interface for the
+       app / configuration that is set to this legal template. It belongs in
+       <head>, before any other script.
+       ===================================================================== -->
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1 class="site-title"><a href="index.html">🦫 The Beaver Gazette</a></h1>
+      <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="gdpr.html">GDPR</a>
+        <a href="tcf.html" class="active">TCF</a>
+        <a href="uk-gdpr.html">UK GDPR</a>
+        <a href="uk-tcf.html">UK TCF</a>
+        <a href="pipeda.html">PIPEDA</a>
+        <a href="cipa.html">CIPA</a>
+        <a href="mspl.html">MSPL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="template-badge">TCF · European Union · ad-tech vendors</span>
+    <h1>Engineering desk: how a beaver reads a river</h1>
+    <p class="page-intro">No blueprints, no permits, no project manager. Just an animal that physically cannot stand the sound of running water.</p>
+
+    <div class="cmp-note">
+      <strong>Consent test page — TCF (IAB Transparency &amp; Consent Framework).</strong> TCF template with IAB vendors and purposes layered on top of the EU consent flow.
+      Paste this template's Usercentrics loader script into the marked comment block at the top of
+      <code>tcf.html</code>, then reload and check each service below.
+    </div>
+
+    <h2>Beaver facts</h2>
+    <div class="facts">
+      <ul>
+        <li>The sound of trickling water triggers an innate damming response — beavers have been recorded piling mud onto loudspeakers playing a recording of a stream.</li>
+        <li>The largest beaver dam ever found is around 850 metres (2,790 ft) long in Wood Buffalo National Park, Alberta. It was spotted on satellite imagery in 2007 and is likely the work of several generations.</li>
+        <li>Dams are built with an upstream face of mud and stones and a downstream lattice of sticks — structurally very close to how humans build an earth-fill dam.</li>
+        <li>A beaver's incisors are orange because of the iron in the enamel, which makes the front edge harder than the back and self-sharpens as it wears.</li>
+        <li>Beaver ponds slow water down so much that they measurably reduce downstream flood peaks and raise the water table in a drought.</li>
+      </ul>
+    </div>
+
+    <h2>Services that require consent</h2>
+    <p class="page-intro">Six third-party services, all pre-blocked with the
+      <code>type="text/plain"</code> pattern. Usercentrics flips them to
+      <code>text/javascript</code> once the matching service is accepted.</p>
+    <div class="service-grid">
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🎥</span>
+        <h3>YouTube Video</h3>
+        <span class="consent-tag">Marketing</span>
+      </div>
+      <p class="service-desc">Our featured beaver documentary of the week, embedded from YouTube.</p>
+      <div class="embed-slot" id="tcf-youtube">
+        <script type="text/plain" data-usercentrics="YouTube Video">
+          document.getElementById('tcf-youtube').innerHTML =
+            '<iframe height="215" src="https://www.youtube-nocookie.com/embed/qcJvv0vDAWs" title="Beaver documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>';
+        </script>
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>YouTube Video</strong> is blocked until consent is granted.
+          <div class="demo-hint">Loads <code>youtube-nocookie.com</code> in an iframe.</div>
+          <button class="demo-btn" data-demo-for="tcf-youtube">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><iframe height="215" src="https://www.youtube-nocookie.com/embed/qcJvv0vDAWs" title="Beaver documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></template>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🗺️</span>
+        <h3>Google Maps</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">Where the world's largest beaver dam sits, in Wood Buffalo National Park, Alberta.</p>
+      <div class="embed-slot" id="tcf-maps">
+        <script type="text/plain" data-usercentrics="Google Maps">
+          document.getElementById('tcf-maps').innerHTML =
+            '<iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&z=13&hl=en&output=embed" title="World\'s largest beaver dam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"><\/iframe>';
+        </script>
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>Google Maps</strong> is blocked until consent is granted.
+          <div class="demo-hint">Loads an iframe from <code>maps.google.com</code>.</div>
+          <button class="demo-btn" data-demo-for="tcf-maps">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&amp;z=13&amp;hl=en&amp;output=embed" title="World&#39;s largest beaver dam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></template>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">📍</span>
+        <h3>Geolocation</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">Find beaver lodges and dams near you using your device location.</p>
+      <div class="embed-slot" id="tcf-geo">
+        <!-- Browser geolocation is not a third-party script, so gate it on a consent check
+             instead of the text/plain pattern, e.g.:
+               var ok = window.UC_UI && window.UC_UI.getServicesBaseInfo()
+                 .find(function (s) { return s.name === 'Browser Geolocation'; }).consent.status;
+             See script.js -> requestLocation(). -->
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>Browser Geolocation</strong> is blocked until consent is granted.
+          <div class="demo-hint">Calls the browser <code>navigator.geolocation</code> API.</div>
+          <button class="demo-btn" data-demo-for="tcf-geo">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><button class="geo-btn" data-geo-for="tcf-geo">Find dams near me</button><p class="geo-output" id="tcf-geo-output"></p></template>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">📊</span>
+        <h3>Google Analytics</h3>
+        <span class="consent-tag">Statistics</span>
+      </div>
+      <p class="service-desc">Tells us which beaver facts you read to the end. Purely so we can write more of them.</p>
+      <div class="embed-slot" id="tcf-analytics">
+        <script type="text/plain" data-usercentrics="Google Analytics 4" async
+                src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script type="text/plain" data-usercentrics="Google Analytics 4">
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        </script>
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>Google Analytics 4</strong> is blocked until consent is granted.
+          <div class="demo-hint">Loads <code>googletagmanager.com/gtag/js</code>.</div>
+          <button class="demo-btn" data-demo-for="tcf-analytics">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><p class="demo-hint">Nothing visual to preview — on consent this fires a request to <code>googletagmanager.com</code>. Watch the Network tab.</p></template>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🐦</span>
+        <h3>Social Media Embed</h3>
+        <span class="consent-tag">Marketing</span>
+      </div>
+      <p class="service-desc">The latest post from the beaver conservation community.</p>
+      <div class="embed-slot" id="tcf-social">
+        <blockquote class="twitter-tweet" data-theme="light">
+          <p>Beaver news, dam updates and wetland photos from the conservation community.</p>
+          <a href="https://twitter.com/BeaverTrust">@BeaverTrust on X</a>
+        </blockquote>
+        <script type="text/plain" data-usercentrics="X (Twitter)" async
+                src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>X (Twitter)</strong> is blocked until consent is granted.
+          <div class="demo-hint">Loads <code>platform.twitter.com/widgets.js</code>.</div>
+          <button class="demo-btn" data-demo-for="tcf-social">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><blockquote class="twitter-tweet" data-theme="light"><p>Beaver news, dam updates and wetland photos from the conservation community.</p><a href="https://twitter.com/BeaverTrust">@BeaverTrust on X</a></blockquote></template>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">💬</span>
+        <h3>Live Chat</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">Ask our resident beaver expert a question. She answers mostly at dusk.</p>
+      <div class="embed-slot" id="tcf-chat">
+        <script type="text/plain" data-usercentrics="Intercom">
+          window.intercomSettings = { app_id: 'YOUR_APP_ID' };
+          (function () {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://widget.intercom.io/widget/YOUR_APP_ID';
+            document.head.appendChild(s);
+          })();
+        </script>
+        <div class="consent-placeholder">
+          <span class="paw">🦫</span>
+          <strong>Intercom</strong> is blocked until consent is granted.
+          <div class="demo-hint">Loads the Intercom messenger widget.</div>
+          <button class="demo-btn" data-demo-for="tcf-chat">Load anyway (demo only)</button>
+        </div>
+        <template class="demo-embed"><p class="demo-hint">Nothing visual to preview — on consent this loads the <code>widget.intercom.io</code> messenger. Replace <code>YOUR_APP_ID</code> first.</p></template>
+      </div>
+    </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p><strong>The Beaver Gazette</strong> — a demo site for testing consent management. Every page carries the
+      same six consent-requiring services, so the same page can be re-tested against each legal
+      template.</p>
+      <p>Beaver facts are real. The analytics ID, chat app ID and social post are placeholders.
+      <a href="index.html">Back to the lodge →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
