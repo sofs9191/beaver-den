@@ -33,12 +33,12 @@ Each template page has one clearly marked comment block in `<head>`:
 
 ```html
 <!-- =====================================================================
-     PASTE THE USERCENTRICS CMP SCRIPT FOR THE "GDPR" TEMPLATE HERE
+     PASTE THE CMP SCRIPT FOR THE "GDPR" TEMPLATE HERE
      ...
      ===================================================================== -->
 ```
 
-Replace that comment with the loader snippet from the Usercentrics admin UI for the
+Replace that comment with the loader snippet from your CMP's admin UI for the
 app/configuration set to that legal template. Keep it before the other scripts on the page.
 
 ## How the pre-consent blocking works
@@ -54,10 +54,10 @@ Every third-party service is already blocked using the standard CMP pattern:
 Browsers do not execute `type="text/plain"`, so nothing loads until the CMP flips the tag to
 `text/javascript` after consent for that service.
 
-**Adjust before real testing:** the `data-usercentrics="..."` values here are the human-readable
+**Adjust before real testing:** the blocking attribute's values here are the human-readable
 service names (`YouTube Video`, `Google Maps`, `Google Analytics 4`, `X (Twitter)`, `Intercom`,
-`Browser Geolocation`). They must match the Data Processing Services actually configured in your
-app, otherwise nothing will ever be unblocked.
+`Browser Geolocation`). They must match the services actually configured in your CMP app,
+otherwise nothing will ever be unblocked.
 
 Geolocation is a browser API, not a third-party script, so it can't use the `text/plain` trick.
 `script.js` → `requestLocation()` has a commented-out `UC_UI.getServicesBaseInfo()` consent check

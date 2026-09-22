@@ -2,7 +2,7 @@
  *
  * This file is NOT the consent mechanism. Real blocking is done by the
  * type="text/plain" data-usercentrics="..." pattern in the HTML, which the
- * Usercentrics CMP script flips to text/javascript once consent is granted.
+ * CMP script flips to text/javascript once consent is granted.
  *
  * Everything here exists so the page is still explorable before a CMP is
  * wired in: a "Load anyway (demo only)" button per service, plus the
