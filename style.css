@@ -259,30 +259,6 @@ h2 + .page-intro {
   flex: 1;
 }
 
-/* Pre-consent placeholder */
-.consent-placeholder {
-  border: 1px dashed var(--blue-mid);
-  border-radius: var(--radius);
-  background: var(--blue-soft);
-  padding: 1.5rem 1rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.consent-placeholder .paw {
-  display: block;
-  font-size: 1.1rem;
-  opacity: 0.55;
-  margin-bottom: 0.45rem;
-}
-
-.consent-placeholder strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.demo-btn,
 .geo-btn {
   font-family: inherit;
   font-size: 0.8rem;
@@ -296,7 +272,6 @@ h2 + .page-intro {
   cursor: pointer;
 }
 
-.demo-btn:hover,
 .geo-btn:hover {
   background: var(--blue-deep);
   border-color: var(--blue-deep);
@@ -332,13 +307,6 @@ blockquote.twitter-tweet a {
   margin: 0.7rem 0 0;
   color: var(--blue-deep);
   word-break: break-word;
-}
-
-.demo-hint {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-top: 0.5rem;
-  line-height: 1.5;
 }
 
 /* ---------- Hero ---------- */

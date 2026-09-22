@@ -69,12 +69,11 @@ to uncomment once a CMP is loaded.
 - `YOUR_APP_ID` — your Intercom app ID (in every template page's live chat block)
 - The X/Twitter embed points at `@BeaverTrust`; swap in a real post URL if you want a rendered card
 
-## The "Load anyway (demo only)" buttons
+## What a visitor sees before consent
 
-Each service card has a demo button that injects the embed directly, bypassing any CMP. It exists
-so the page is explorable before a CMP is wired in — it is **not** part of the consent flow. See
-`script.js`. Delete `script.js` and the `<template class="demo-embed">` elements if you want pages
-that only ever load through the CMP.
+Nothing but the card title and description. There is no fallback placeholder and no way to load a
+service manually — each embed appears only when the CMP releases it, which is how a production
+site behaves. An empty card is therefore the expected pre-consent state.
 
 ## Publishing to GitHub Pages
 

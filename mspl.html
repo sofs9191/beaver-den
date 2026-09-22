@@ -74,13 +74,6 @@
           document.getElementById('mspl-youtube').innerHTML =
             '<iframe height="215" src="https://www.youtube-nocookie.com/embed/jBaXlyq3E8M" title="Beaver documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>';
         </script>
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>YouTube Video</strong> is blocked until consent is granted.
-          <div class="demo-hint">Loads <code>youtube-nocookie.com</code> in an iframe.</div>
-          <button class="demo-btn" data-demo-for="mspl-youtube">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><iframe height="215" src="https://www.youtube-nocookie.com/embed/jBaXlyq3E8M" title="Beaver documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></template>
       </div>
     </article>
     <article class="service-card">
@@ -95,13 +88,6 @@
           document.getElementById('mspl-maps').innerHTML =
             '<iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&z=13&hl=en&output=embed" title="World\'s largest beaver dam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"><\/iframe>';
         </script>
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>Google Maps</strong> is blocked until consent is granted.
-          <div class="demo-hint">Loads an iframe from <code>maps.google.com</code>.</div>
-          <button class="demo-btn" data-demo-for="mspl-maps">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&amp;z=13&amp;hl=en&amp;output=embed" title="World&#39;s largest beaver dam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></template>
       </div>
     </article>
     <article class="service-card">
@@ -117,13 +103,8 @@
                var ok = window.UC_UI && window.UC_UI.getServicesBaseInfo()
                  .find(function (s) { return s.name === 'Browser Geolocation'; }).consent.status;
              See script.js -> requestLocation(). -->
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>Browser Geolocation</strong> is blocked until consent is granted.
-          <div class="demo-hint">Calls the browser <code>navigator.geolocation</code> API.</div>
-          <button class="demo-btn" data-demo-for="mspl-geo">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><button class="geo-btn" data-geo-for="mspl-geo">Find dams near me</button><p class="geo-output" id="mspl-geo-output"></p></template>
+        <button class="geo-btn" data-geo-for="mspl-geo">Find dams near me</button>
+        <p class="geo-output" id="mspl-geo-output"></p>
       </div>
     </article>
     <article class="service-card">
@@ -142,13 +123,6 @@
           gtag('js', new Date());
           gtag('config', 'G-XXXXXXXXXX');
         </script>
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>Google Analytics 4</strong> is blocked until consent is granted.
-          <div class="demo-hint">Loads <code>googletagmanager.com/gtag/js</code>.</div>
-          <button class="demo-btn" data-demo-for="mspl-analytics">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><p class="demo-hint">Nothing visual to preview — on consent this fires a request to <code>googletagmanager.com</code>. Watch the Network tab.</p></template>
       </div>
     </article>
     <article class="service-card">
@@ -165,13 +139,6 @@
         </blockquote>
         <script type="text/plain" data-usercentrics="X (Twitter)" async
                 src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>X (Twitter)</strong> is blocked until consent is granted.
-          <div class="demo-hint">Loads <code>platform.twitter.com/widgets.js</code>.</div>
-          <button class="demo-btn" data-demo-for="mspl-social">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><blockquote class="twitter-tweet" data-theme="light"><p>Beaver news, dam updates and wetland photos from the conservation community.</p><a href="https://twitter.com/BeaverTrust">@BeaverTrust on X</a></blockquote></template>
       </div>
     </article>
     <article class="service-card">
@@ -192,13 +159,6 @@
             document.head.appendChild(s);
           })();
         </script>
-        <div class="consent-placeholder">
-          <span class="paw">🦫</span>
-          <strong>Intercom</strong> is blocked until consent is granted.
-          <div class="demo-hint">Loads the Intercom messenger widget.</div>
-          <button class="demo-btn" data-demo-for="mspl-chat">Load anyway (demo only)</button>
-        </div>
-        <template class="demo-embed"><p class="demo-hint">Nothing visual to preview — on consent this loads the <code>widget.intercom.io</code> messenger. Replace <code>YOUR_APP_ID</code> first.</p></template>
       </div>
     </article>
     </div>
