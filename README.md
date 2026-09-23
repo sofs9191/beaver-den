@@ -20,7 +20,7 @@ CMP's job, not the markup's.
 
 | Template | Folder | Hostname (use as the CMP Domain) |
 | --- | --- | --- |
-| GDPR | `sites/gdpr/` | `beaver-den-gdpr.pages.dev` |
+| GDPR | `sites/gdpr/` | `beaver-den.pages.dev` |
 | TCF | `sites/tcf/` | `beaver-den-tcf.pages.dev` |
 | UK GDPR | `sites/uk-gdpr/` | `beaver-den-uk-gdpr.pages.dev` |
 | UK TCF | `sites/uk-tcf/` | `beaver-den-uk-tcf.pages.dev` |
@@ -44,7 +44,8 @@ Create one Pages project per template, all connected to this repo:
 
 1. **Workers & Pages → Create → Pages → Connect to Git**, then pick this repository.
 2. Use these settings for each project:
-   - Project name: `beaver-den-<slug>`, e.g. `beaver-den-gdpr`
+   - Project name: `beaver-den-<slug>`, e.g. `beaver-den-tcf`. The one exception is GDPR, whose
+     project is named plain `beaver-den` (Cloudflare project names can't be changed).
    - Production branch: `main`
    - Framework preset: **None**, with the build command left **empty**
    - Build output directory: `sites/<slug>`
