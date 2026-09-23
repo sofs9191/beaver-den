@@ -14,7 +14,7 @@ CMP's job, not the markup's.
 | Geolocation | Functional | browser `navigator.geolocation` API |
 | Google Analytics 4 | Statistics | `googletagmanager.com/gtag/js` |
 | Social embed (X) | Marketing | timeline widget via `platform.twitter.com/widgets.js` |
-| Live chat (Intercom) | Functional | `widget.intercom.io` |
+| Live chat (Crisp) | Functional | `client.crisp.chat` |
 
 ## Sites
 
@@ -59,7 +59,7 @@ the real hostname.
 
 - Google Analytics 4: `G-Z5837W9ZMF`, one data stream shared by all sites. GA4 separates the
   traffic by hostname.
-- `YOUR_APP_ID`: still a placeholder for the live chat block on every site
+- Crisp: website ID `9d8bf734-9f1c-4b3b-a639-5d4ff8152118`, on the free plan
 
 ## Geolocation
 
@@ -79,4 +79,4 @@ for each site. The CMP won't validate on `localhost`, since each setting is tied
 
 ## Notes
 
-The beaver facts are real. The analytics and chat IDs are placeholders.
+The beaver facts are real.
