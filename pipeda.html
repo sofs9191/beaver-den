@@ -58,9 +58,8 @@
     </div>
 
     <h2>Services that require consent</h2>
-    <p class="page-intro">Six third-party services, all pre-blocked with the
-      <code>type="text/plain"</code> pattern. The CMP flips them to
-      <code>text/javascript</code> once the matching service is accepted.</p>
+    <p class="page-intro">Six third-party services, embedded the ordinary way. Blocking them
+      before consent is the CMP's job.</p>
     <div class="service-grid">
     <article class="service-card">
       <div class="service-card-header">
@@ -70,10 +69,9 @@
       </div>
       <p class="service-desc">Our featured beaver documentary of the week, embedded from YouTube.</p>
       <div class="embed-slot" id="pipeda-youtube">
-        <script type="text/plain" data-usercentrics="YouTube Video">
-          document.getElementById('pipeda-youtube').innerHTML =
-            '<iframe height="215" src="https://www.youtube-nocookie.com/embed/vrHRPbedhSE" title="Beaver documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>';
-        </script>
+        <iframe height="215" src="https://www.youtube.com/embed/vrHRPbedhSE" title="Beaver documentary"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
       </div>
     </article>
     <article class="service-card">
@@ -84,10 +82,8 @@
       </div>
       <p class="service-desc">Where the world's largest beaver dam sits, in Wood Buffalo National Park, Alberta.</p>
       <div class="embed-slot" id="pipeda-maps">
-        <script type="text/plain" data-usercentrics="Google Maps">
-          document.getElementById('pipeda-maps').innerHTML =
-            '<iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&z=13&hl=en&output=embed" title="World\'s largest beaver dam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"><\/iframe>';
-        </script>
+        <iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&amp;z=13&amp;hl=en&amp;output=embed" title="World's largest beaver dam"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </article>
     <article class="service-card">
@@ -98,8 +94,8 @@
       </div>
       <p class="service-desc">Find beaver lodges and dams near you using your device location.</p>
       <div class="embed-slot" id="pipeda-geo">
-        <!-- Browser geolocation is not a third-party script, so gate it on a consent check
-             instead of the text/plain pattern, e.g.:
+        <!-- Browser geolocation is a browser API rather than a third-party script, so the CMP
+             cannot block it for you. Gate it on a consent check, e.g.:
                var ok = window.UC_UI && window.UC_UI.getServicesBaseInfo()
                  .find(function (s) { return s.name === 'Browser Geolocation'; }).consent.status;
              See script.js -> requestLocation(). -->
@@ -115,14 +111,15 @@
       </div>
       <p class="service-desc">Tells us which beaver facts you read to the end. Purely so we can write more of them.</p>
       <div class="embed-slot" id="pipeda-analytics">
-        <script type="text/plain" data-usercentrics="Google Analytics 4" async
-                src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script type="text/plain" data-usercentrics="Google Analytics 4">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script>
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
           gtag('config', 'G-XXXXXXXXXX');
         </script>
+        <p class="service-note">No visible element. Look for a request to
+          <code>googletagmanager.com</code> in the Network tab.</p>
       </div>
     </article>
     <article class="service-card">
@@ -133,12 +130,9 @@
       </div>
       <p class="service-desc">The latest post from the beaver conservation community.</p>
       <div class="embed-slot" id="pipeda-social">
-        <blockquote class="twitter-tweet" data-theme="light">
-          <p>Beaver news, dam updates and wetland photos from the conservation community.</p>
-          <a href="https://twitter.com/BeaverTrust">@BeaverTrust on X</a>
-        </blockquote>
-        <script type="text/plain" data-usercentrics="X (Twitter)" async
-                src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-height="320" data-theme="light"
+           href="https://twitter.com/BeaverTrust">Posts from @BeaverTrust</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </article>
     <article class="service-card">
@@ -149,7 +143,7 @@
       </div>
       <p class="service-desc">Ask our resident beaver expert a question. She answers mostly at dusk.</p>
       <div class="embed-slot" id="pipeda-chat">
-        <script type="text/plain" data-usercentrics="Intercom">
+        <script>
           window.intercomSettings = { app_id: 'YOUR_APP_ID' };
           (function () {
             var s = document.createElement('script');
@@ -159,6 +153,8 @@
             document.head.appendChild(s);
           })();
         </script>
+        <p class="service-note">Opens as a bubble in the corner once a real app ID replaces
+          <code>YOUR_APP_ID</code>. Look for <code>widget.intercom.io</code> in the Network tab.</p>
       </div>
     </article>
     </div>
