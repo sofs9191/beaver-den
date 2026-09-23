@@ -2,107 +2,79 @@
 
 A niche beaver-enthusiast site that doubles as a consent-management test bed.
 
-Seven pages, one per legal template. Every template page loads the **same six
-consent-requiring services**, so the same page can be re-tested against each template:
+There are seven sites, one per legal template. Each has **its own hostname**, so each CMP setting
+has its own domain and its scan covers exactly one template. Every site loads the **same six
+consent-requiring services**, embedded the ordinary way. Blocking them before consent is the
+CMP's job, not the markup's.
 
-| Service | Consent category | What it actually loads |
+| Service | Consent category | What it loads |
 | --- | --- | --- |
-| YouTube video | Marketing | iframe from `youtube-nocookie.com` |
+| YouTube video | Marketing | iframe from `youtube.com/embed` |
 | Google Maps | Functional | iframe from `maps.google.com` |
 | Geolocation | Functional | browser `navigator.geolocation` API |
 | Google Analytics 4 | Statistics | `googletagmanager.com/gtag/js` |
-| Social embed (X) | Marketing | `platform.twitter.com/widgets.js` |
+| Social embed (X) | Marketing | timeline widget via `platform.twitter.com/widgets.js` |
 | Live chat (Intercom) | Functional | `widget.intercom.io` |
 
-## Pages
+## Sites
 
-| File | Template | Region |
+| Template | Folder | Hostname (use as the CMP Domain) |
 | --- | --- | --- |
-| `index.html` | — (control page, no CMP script) | — |
-| `gdpr.html` | GDPR | European Union |
-| `tcf.html` | TCF | EU · ad-tech vendors |
-| `uk-gdpr.html` | UK GDPR | United Kingdom |
-| `uk-tcf.html` | UK TCF | UK · ad-tech vendors |
-| `pipeda.html` | PIPEDA | Canada |
-| `cipa.html` | CIPA | US · schools & libraries |
-| `mspl.html` | MSPL | US · state privacy laws |
+| GDPR | `sites/gdpr/` | `beaver-den-gdpr.pages.dev` |
+| TCF | `sites/tcf/` | `beaver-den-tcf.pages.dev` |
+| UK GDPR | `sites/uk-gdpr/` | `beaver-den-uk-gdpr.pages.dev` |
+| UK TCF | `sites/uk-tcf/` | `beaver-den-uk-tcf.pages.dev` |
+| PIPEDA | `sites/pipeda/` | `beaver-den-pipeda.pages.dev` |
+| CIPA | `sites/cipa/` | `beaver-den-cipa.pages.dev` |
+| MSPL | `sites/mspl/` | `beaver-den-mspl.pages.dev` |
 
-## Where to paste each CMP script
+Each folder is self-contained, with its own `index.html`, `style.css` and `script.js`. That keeps a
+scan of one site limited to that site plus its six services.
 
-Each template page has one clearly marked comment block in `<head>`:
+The CMP loader script for each template sits in the `<head>` of its `index.html`. TCF and UK TCF
+also load the TCF stub just before the loader.
 
-```html
-<!-- =====================================================================
-     PASTE THE CMP SCRIPT FOR THE "GDPR" TEMPLATE HERE
-     ...
-     ===================================================================== -->
-```
+The repo root `index.html` is the **hub**, served by GitHub Pages at
+`https://sofs9191.github.io/beaver-den/`. It has no CMP, so it doubles as a control page: the same
+six services load there with nothing blocking them.
 
-Replace that comment with the loader snippet from your CMP's admin UI for the
-app/configuration set to that legal template. Keep it before the other scripts on the page.
+## Hosting setup (Cloudflare Pages, one-time)
 
-## How the pre-consent blocking works
+Create one Pages project per template, all connected to this repo:
 
-Every third-party service is already blocked using the standard CMP pattern:
+1. **Workers & Pages → Create → Pages → Connect to Git**, then pick this repository.
+2. Use these settings for each project:
+   - Project name: `beaver-den-<slug>`, e.g. `beaver-den-gdpr`
+   - Production branch: `main`
+   - Framework preset: **None**, with the build command left **empty**
+   - Build output directory: `sites/<slug>`
 
-```html
-<script type="text/plain" data-usercentrics="Google Maps">
-  /* embed code */
-</script>
-```
+Every push to `main` then redeploys all seven.
 
-Browsers do not execute `type="text/plain"`, so nothing loads until the CMP flips the tag to
-`text/javascript` after consent for that service.
-
-**Adjust before real testing:** the blocking attribute's values here are the human-readable
-service names (`YouTube Video`, `Google Maps`, `Google Analytics 4`, `X (Twitter)`, `Intercom`,
-`Browser Geolocation`). They must match the services actually configured in your CMP app,
-otherwise nothing will ever be unblocked.
-
-Geolocation is a browser API, not a third-party script, so it can't use the `text/plain` trick.
-`script.js` → `requestLocation()` has a commented-out `UC_UI.getServicesBaseInfo()` consent check
-to uncomment once a CMP is loaded.
+If Cloudflare appends a suffix because a project name is taken, update the nav and hub links to
+the real hostname.
 
 ## Placeholders to replace
 
-- `G-XXXXXXXXXX` — your GA4 measurement ID (in every template page's analytics block)
-- `YOUR_APP_ID` — your Intercom app ID (in every template page's live chat block)
-- The X/Twitter embed points at `@BeaverTrust`; swap in a real post URL if you want a rendered card
+- `G-XXXXXXXXXX`: your GA4 measurement ID (analytics block on every site)
+- `YOUR_APP_ID`: your Intercom app ID (live chat block on every site)
 
-## What a visitor sees before consent
+## Geolocation
 
-Nothing but the card title and description. There is no fallback placeholder and no way to load a
-service manually — each embed appears only when the CMP releases it, which is how a production
-site behaves. An empty card is therefore the expected pre-consent state.
-
-## Publishing to GitHub Pages
-
-```bash
-cd beaver-den
-git init
-git add .
-git commit -m "Beaver Gazette consent test site"
-git branch -M main
-git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
-
-Then in the repo: **Settings → Pages → Build and deployment → Deploy from a branch → `main` /
-`(root)`**. The site appears at `https://YOUR_USERNAME.github.io/YOUR_REPO/`.
-
-Serving over HTTPS matters here — geolocation is blocked on plain `http://` (other than
-`localhost`), and some CMP setups are domain-scoped.
+Geolocation is a browser API rather than a third-party script, so a CMP can't block it
+automatically. `script.js` → `requestLocation()` includes a commented-out consent check to enable
+once the CMP is live.
 
 ## Local preview
-
-Opening `index.html` directly works for layout, but geolocation and some embeds want a real origin:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:8000` for the hub, or `http://localhost:8000/sites/gdpr/` and so on
+for each site. The CMP won't validate on `localhost`, since each setting is tied to its
+`pages.dev` domain.
 
 ## Notes
 
-The beaver facts are real. The analytics ID, chat app ID and social post are placeholders.
+The beaver facts are real. The analytics and chat IDs are placeholders.
