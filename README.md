@@ -55,10 +55,11 @@ Every push to `main` then redeploys all seven.
 If Cloudflare appends a suffix because a project name is taken, update the nav and hub links to
 the real hostname.
 
-## Placeholders to replace
+## Service IDs
 
-- `G-XXXXXXXXXX`: your GA4 measurement ID (analytics block on every site)
-- `YOUR_APP_ID`: your Intercom app ID (live chat block on every site)
+- Google Analytics 4: `G-Z5837W9ZMF`, one data stream shared by all sites. GA4 separates the
+  traffic by hostname.
+- `YOUR_APP_ID`: still a placeholder for the live chat block on every site
 
 ## Geolocation
 
