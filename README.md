@@ -13,7 +13,7 @@ CMP's job, not the markup's.
 | Google Maps | Functional | iframe from `maps.google.com` |
 | Geolocation | Functional | browser `navigator.geolocation` API |
 | Google Analytics 4 | Statistics | `googletagmanager.com/gtag/js` |
-| Social embed (X) | Marketing | timeline widget via `platform.twitter.com/widgets.js` |
+| Social embed (X) | Marketing | single post embed via `platform.twitter.com/widgets.js` |
 | Live chat (Crisp) | Functional | `client.crisp.chat` |
 
 ## Sites
