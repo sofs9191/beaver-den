@@ -2,7 +2,7 @@
 
 A niche beaver-enthusiast site that doubles as a consent-management test bed.
 
-There are eight sites, one per legal template. Each has **its own hostname**, so each CMP setting
+There are twelve sites, one per legal template, plus three feature-test sites. Each has **its own hostname**, so each CMP setting
 has its own domain and its scan covers exactly one template. Every site loads the **same six
 consent-requiring services**, embedded the ordinary way. Blocking them before consent is the
 CMP's job, not the markup's.
@@ -28,6 +28,10 @@ CMP's job, not the markup's.
 | CIPA | `sites/cipa/` | `beaver-den-cipa.pages.dev` |
 | MSPL | `sites/mspl/` | `beaver-den-mspl.pages.dev` |
 | LFPDPPP (Mexico) | `sites/mexico/` | `beaver-den-mexico.pages.dev` |
+| DPDP (India) | `sites/india/` | `beaver-den-india.pages.dev` |
+| UK DUAA | `sites/uk-duaa/` | `beaver-den-uk-duaa.pages.dev` |
+| LGPD (Brazil) | `sites/brazil/` | `beaver-den-brazil.pages.dev` |
+| Law 25 (Québec) | `sites/quebec/` | `beaver-den-quebec.pages.dev` |
 | Consent or Pay (TCF) | `sites/consent-or-pay/` | `beaver-den-consent-or-pay.pages.dev` |
 | Age Verification | `sites/age-verification/` | `beaver-den-age-verification.pages.dev` |
 | DSR | `sites/dsr/` | `beaver-den-dsr.pages.dev` |
