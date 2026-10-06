@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LFPDPPP — The Beaver Gazette</title>
+  <meta name="description" content="Mexican template under the 2025 LFPDPPP, which replaced the 2010 law and moved oversight from INAI to the Secretaría Anticorrupción y Buen Gobierno.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =====================================================================
+       PASTE THE CMP SCRIPT FOR THE "LFPDPPP" TEMPLATE HERE
+       (Ley Federal de Protección de Datos Personales en Posesión de los Particulares — Mexico)
+
+       Use the loader snippet from your consent management platform for the
+       app / configuration that is set to this legal template. It belongs in
+       <head>, before any other script.
+       ===================================================================== -->
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1 class="site-title"><a href="https://sofs9191.github.io/beaver-den/">🦫 The Beaver Gazette</a></h1>
+      <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
+      <nav class="site-nav">
+        <a href="https://sofs9191.github.io/beaver-den/">Home</a>
+        <a href="https://beaver-den.pages.dev/">GDPR</a>
+        <a href="https://beaver-den-tcf.pages.dev/">TCF</a>
+        <a href="https://beaver-den-uk-gdpr.pages.dev/">UK GDPR</a>
+        <a href="https://beaver-den-uk-tcf.pages.dev/">UK TCF</a>
+        <a href="https://beaver-den-pipeda.pages.dev/">PIPEDA</a>
+        <a href="https://beaver-den-cipa.pages.dev/">CIPA</a>
+        <a href="https://beaver-den-mspl.pages.dev/">MSPL</a>
+        <a href="https://beaver-den-mexico.pages.dev/" class="active">LFPDPPP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="template-badge">LFPDPPP · Mexico</span>
+    <h1>El castor: Mexico's endangered engineer</h1>
+    <p class="page-intro">At the southern edge of its range, the beaver is a protected endangered species in Mexico, holding on along a handful of desert rivers in Sonora, Chihuahua and the Río Bravo basin.</p>
+
+    <div class="cmp-note">
+      <strong>Consent test page — LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares).</strong> Mexican template under the 2025 LFPDPPP, which replaced the 2010 law and moved oversight from INAI to the Secretaría Anticorrupción y Buen Gobierno.
+    </div>
+
+    <h2>Beaver facts</h2>
+    <div class="facts">
+      <ul>
+        <li>Northern Mexico is the southern edge of the North American beaver's range. In Mexico it lives only in Sonora, Chihuahua, Coahuila, Nuevo León and Tamaulipas.</li>
+        <li>Mexico lists the beaver as <em>en peligro de extinción</em> (endangered) under NOM-059-SEMARNAT-2010, even though it is rated Least Concern worldwide.</li>
+        <li>Dams, water extraction, grazing and trapping have split the beavers of the Río Bravo (Rio Grande) basin into small, scattered populations.</li>
+        <li>Sonora's beavers belong to the subspecies <em>Castor canadensis frondator</em>. A 1999 survey found beaver sign at 14 sites along the upper Río Bavispe, among its cottonwoods and willows.</li>
+        <li>Mexico's protected-areas commission, CONANP, runs a dedicated species action programme (<em>PACE</em>) for the beaver.</li>
+        <li>In Spanish the beaver is <em>el castor</em>, from the same Latin root as castoreum, the scent the fur trade once prized.</li>
+      </ul>
+    </div>
+
+    <h2>Services that require consent</h2>
+    <p class="page-intro">Six third-party services, embedded the ordinary way. Blocking them
+      before consent is the CMP's job.</p>
+    <div class="service-grid">
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🎥</span>
+        <h3>YouTube Video</h3>
+        <span class="consent-tag">Marketing</span>
+      </div>
+      <p class="service-desc">Our featured beaver documentary of the week, embedded from YouTube.</p>
+      <div class="embed-slot" id="mexico-youtube">
+        <iframe height="215" src="https://www.youtube.com/embed/iyNA62FrKCE" title="Beaver documentary"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🗺️</span>
+        <h3>Google Maps</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">The upper Río Bavispe in Sonora, where surveys have found beaver sign along the river.</p>
+      <div class="embed-slot" id="mexico-maps">
+        <iframe height="215" src="https://maps.google.com/maps?q=R%C3%ADo+Bavispe,+Sonora,+Mexico&amp;z=9&amp;hl=en&amp;output=embed" title="Río Bavispe, Sonora"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">📍</span>
+        <h3>Geolocation</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">Find beaver lodges and dams near you using your device location.</p>
+      <div class="embed-slot" id="mexico-geo">
+        <!-- Browser geolocation is a browser API rather than a third-party script, so the CMP
+             cannot block it for you. Gate it on a consent check, e.g.:
+               var ok = window.UC_UI && window.UC_UI.getServicesBaseInfo()
+                 .find(function (s) { return s.name === 'Browser Geolocation'; }).consent.status;
+             See script.js -> requestLocation(). -->
+        <button class="geo-btn" data-geo-for="mexico-geo">Find dams near me</button>
+        <p class="geo-output" id="mexico-geo-output"></p>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">📊</span>
+        <h3>Google Analytics</h3>
+        <span class="consent-tag">Statistics</span>
+      </div>
+      <p class="service-desc">Tells us which beaver facts you read to the end. Purely so we can write more of them.</p>
+      <div class="embed-slot" id="mexico-analytics">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5837W9ZMF"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-Z5837W9ZMF');
+        </script>
+        <p class="service-note">No visible element. Look for a request to
+          <code>googletagmanager.com</code> in the Network tab.</p>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🐦</span>
+        <h3>Social Media Embed</h3>
+        <span class="consent-tag">Marketing</span>
+      </div>
+      <p class="service-desc">The latest post from the beaver conservation community.</p>
+      <div class="embed-slot" id="mexico-social">
+        <a class="twitter-timeline" data-height="320" data-theme="light"
+           href="https://twitter.com/BeaverTrust">Posts from @BeaverTrust</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">💬</span>
+        <h3>Live Chat</h3>
+        <span class="consent-tag">Functional</span>
+      </div>
+      <p class="service-desc">Ask our resident beaver expert a question. She answers mostly at dusk.</p>
+      <div class="embed-slot" id="mexico-chat">
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="9d8bf734-9f1c-4b3b-a639-5d4ff8152118";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+        <p class="service-note">The chat bubble appears in the bottom-right corner of the page.</p>
+      </div>
+    </article>
+    </div>
+
+    <h2>Financial services</h2>
+    <p class="page-intro">Payment and market-data providers. Each one collects data about the
+      visitor's device or session.</p>
+    <div class="service-grid">
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">💳</span>
+        <h3>Stripe</h3>
+        <span class="consent-tag">Financial</span>
+      </div>
+      <p class="service-desc">Support the Gazette with a donation, processed by Stripe.</p>
+      <div class="embed-slot" id="mexico-stripe">
+        <script src="https://js.stripe.com/v3/"></script>
+        <p class="service-note">No visible element. Stripe.js loads its fraud-detection frame from
+          <code>js.stripe.com</code> as soon as the page opens.</p>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">🏦</span>
+        <h3>Mercado Pago</h3>
+        <span class="consent-tag">Financial</span>
+      </div>
+      <p class="service-desc">Pay for Gazette merch in pesos with Mercado Pago.</p>
+      <div class="embed-slot" id="mexico-mercadopago">
+        <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+        <p class="service-note">No visible element. The security script fingerprints the device for
+          fraud prevention and stores the result in <code>MP_DEVICE_SESSION_ID</code>.</p>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-card-header">
+        <span class="service-icon">📈</span>
+        <h3>Exchange Rate</h3>
+        <span class="consent-tag">Financial</span>
+      </div>
+      <p class="service-desc">Live US dollar to Mexican peso rate, for pricing the merch shop.</p>
+      <div class="embed-slot" id="mexico-fx">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "FX_IDC:USDMXN",
+            "width": "100%",
+            "height": 220,
+            "locale": "en",
+            "dateRange": "12M",
+            "colorTheme": "light",
+            "isTransparent": true,
+            "autosize": false
+          }
+          </script>
+        </div>
+      </div>
+    </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p><strong>The Beaver Gazette</strong> — a demo site for testing consent management. This page carries the
+      same six consent-requiring services as every other template, plus three financial
+      services.</p>
+      <p>Beaver facts are real.
+      <a href="https://sofs9191.github.io/beaver-den/">Back to the lodge →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

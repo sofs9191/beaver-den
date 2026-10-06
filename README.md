@@ -2,7 +2,7 @@
 
 A niche beaver-enthusiast site that doubles as a consent-management test bed.
 
-There are seven sites, one per legal template. Each has **its own hostname**, so each CMP setting
+There are eight sites, one per legal template. Each has **its own hostname**, so each CMP setting
 has its own domain and its scan covers exactly one template. Every site loads the **same six
 consent-requiring services**, embedded the ordinary way. Blocking them before consent is the
 CMP's job, not the markup's.
@@ -27,6 +27,7 @@ CMP's job, not the markup's.
 | PIPEDA | `sites/pipeda/` | `beaver-den-pipeda.pages.dev` |
 | CIPA | `sites/cipa/` | `beaver-den-cipa.pages.dev` |
 | MSPL | `sites/mspl/` | `beaver-den-mspl.pages.dev` |
+| LFPDPPP (Mexico) | `sites/mexico/` | `beaver-den-mexico.pages.dev` |
 
 Each folder is self-contained, with its own `index.html`, `style.css` and `script.js`. That keeps a
 scan of one site limited to that site plus its six services.
@@ -50,10 +51,24 @@ Create one Pages project per template, all connected to this repo:
    - Framework preset: **None**, with the build command left **empty**
    - Build output directory: `sites/<slug>`
 
-Every push to `main` then redeploys all seven.
+Every push to `main` then redeploys all eight.
 
 If Cloudflare appends a suffix because a project name is taken, update the nav and hub links to
 the real hostname.
+
+## Financial services (Mexico only)
+
+The Mexico site also loads three financial services. They're meant for testing a custom scanner
+category such as "Financial".
+
+| Service | What it loads | Data it collects |
+| --- | --- | --- |
+| Stripe | `js.stripe.com/v3` | fraud-detection frame on page load |
+| Mercado Pago | `www.mercadopago.com/v2/security.js` | device fingerprint, stored in `MP_DEVICE_SESSION_ID` |
+| TradingView (USD/MXN) | `s3.tradingview.com` widget, iframe from `tradingview-widget.com` | visible rate chart; widget tracking |
+
+In testing without a publishable key, Stripe set no `__stripe_mid` / `__stripe_sid` cookies, but
+the script and its fraud frame still loaded.
 
 ## Service IDs
 
