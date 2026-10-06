@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MSPL — The Beaver Gazette</title>
   <meta name="description" content="US multi-state template: opt-out signals, sale/sharing and GPC handling across state laws.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 
   <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="AkTC9TSd_DZf08" async></script>
 
@@ -13,25 +13,34 @@
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <h1 class="site-title"><a href="https://sofs9191.github.io/beaver-den/">🦫 The Beaver Gazette</a></h1>
-      <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
-      <nav class="site-nav">
+      <p class="site-title"><a href="https://sofs9191.github.io/beaver-den/">🦫 The Beaver Gazette</a></p>
+      <nav class="site-nav" aria-label="Site">
         <a href="https://sofs9191.github.io/beaver-den/">Home</a>
-        <a href="https://beaver-den.pages.dev/">GDPR</a>
-        <a href="https://beaver-den-tcf.pages.dev/">TCF</a>
-        <a href="https://beaver-den-uk-gdpr.pages.dev/">UK GDPR</a>
-        <a href="https://beaver-den-uk-tcf.pages.dev/">UK TCF</a>
-        <a href="https://beaver-den-uk-duaa.pages.dev/">UK DUAA</a>
-        <a href="https://beaver-den-pipeda.pages.dev/">PIPEDA</a>
-        <a href="https://beaver-den-quebec.pages.dev/">Law 25</a>
-        <a href="https://beaver-den-cipa.pages.dev/">CIPA</a>
-        <a href="https://beaver-den-mspl.pages.dev/" class="active">MSPL</a>
-        <a href="https://beaver-den-mexico.pages.dev/">LFPDPPP</a>
-        <a href="https://beaver-den-brazil.pages.dev/">LGPD</a>
-        <a href="https://beaver-den-india.pages.dev/">DPDP</a>
-        <a href="https://beaver-den-consent-or-pay.pages.dev/">Consent or Pay</a>
-        <a href="https://beaver-den-age-verification.pages.dev/">Age Gate</a>
-        <a href="https://beaver-den-dsr.pages.dev/">DSR</a>
+        <details class="nav-group has-active">
+          <summary>Templates</summary>
+          <div class="nav-menu">
+            <a href="https://beaver-den.pages.dev/"><span>GDPR</span><small>European Union</small></a>
+            <a href="https://beaver-den-tcf.pages.dev/"><span>TCF</span><small>EU · ad tech</small></a>
+            <a href="https://beaver-den-uk-gdpr.pages.dev/"><span>UK GDPR</span><small>United Kingdom</small></a>
+            <a href="https://beaver-den-uk-tcf.pages.dev/"><span>UK TCF</span><small>UK · ad tech</small></a>
+            <a href="https://beaver-den-uk-duaa.pages.dev/"><span>UK DUAA</span><small>United Kingdom</small></a>
+            <a href="https://beaver-den-pipeda.pages.dev/"><span>PIPEDA</span><small>Canada</small></a>
+            <a href="https://beaver-den-quebec.pages.dev/"><span>Law 25</span><small>Québec</small></a>
+            <a href="https://beaver-den-cipa.pages.dev/"><span>CIPA</span><small>US · schools &amp; libraries</small></a>
+            <a href="https://beaver-den-mspl.pages.dev/" class="active" aria-current="page"><span>MSPL</span><small>US · state laws</small></a>
+            <a href="https://beaver-den-mexico.pages.dev/"><span>LFPDPPP</span><small>Mexico</small></a>
+            <a href="https://beaver-den-brazil.pages.dev/"><span>LGPD</span><small>Brazil</small></a>
+            <a href="https://beaver-den-india.pages.dev/"><span>DPDP</span><small>India</small></a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Features</summary>
+          <div class="nav-menu single">
+            <a href="https://beaver-den-consent-or-pay.pages.dev/"><span>Consent or Pay</span><small>TCF</small></a>
+            <a href="https://beaver-den-age-verification.pages.dev/"><span>Age Gate</span><small>Youth privacy</small></a>
+            <a href="https://beaver-den-dsr.pages.dev/"><span>DSR</span><small>Privacy rights</small></a>
+          </div>
+        </details>
       </nav>
     </div>
   </header>
@@ -150,7 +159,8 @@
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p><strong>The Beaver Gazette</strong> — a demo site for testing consent management. Every page carries the
+      <p><strong>The Beaver Gazette</strong> · Dam fine journalism for beaver aficionados since 1876.</p>
+      <p>A demo site for testing consent management. Every page carries the
       same six consent-requiring services, so the same page can be re-tested against each legal
       template.</p>
       <p>Beaver facts are real.
@@ -158,6 +168,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

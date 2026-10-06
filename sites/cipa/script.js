@@ -41,3 +41,30 @@ function requestLocation(slotId) {
     }
   );
 }
+
+var navGroups = document.querySelectorAll('.nav-group');
+
+navGroups.forEach(function (group) {
+  group.addEventListener('toggle', function () {
+    if (!group.open) return;
+    navGroups.forEach(function (other) {
+      if (other !== group) other.open = false;
+    });
+  });
+});
+
+document.addEventListener('click', function (event) {
+  navGroups.forEach(function (group) {
+    if (group.open && !group.contains(event.target)) group.open = false;
+  });
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key !== 'Escape') return;
+  navGroups.forEach(function (group) {
+    if (group.open) {
+      group.open = false;
+      group.querySelector('summary').focus();
+    }
+  });
+});
