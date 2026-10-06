@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — The Beaver Gazette</title>
+  <meta name="description" content="Subscribers sign in to read the Gazette without ads or tracking.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =====================================================================
+       PASTE THE CMP SCRIPT FOR THE "CONSENT OR PAY (TCF)" SETTING HERE
+       A TCF setting needs two tags: the TCF stub first, then the loader.
+       Use the same snippet on index.html, login.html and subscribe.html.
+
+       It belongs in <head>, before any other script.
+       ===================================================================== -->
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1 class="site-title"><a href="https://sofs9191.github.io/beaver-den/">🦫 The Beaver Gazette</a></h1>
+      <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
+      <nav class="site-nav">
+        <a href="https://sofs9191.github.io/beaver-den/">Home</a>
+        <a href="https://beaver-den.pages.dev/">GDPR</a>
+        <a href="https://beaver-den-tcf.pages.dev/">TCF</a>
+        <a href="https://beaver-den-uk-gdpr.pages.dev/">UK GDPR</a>
+        <a href="https://beaver-den-uk-tcf.pages.dev/">UK TCF</a>
+        <a href="https://beaver-den-pipeda.pages.dev/">PIPEDA</a>
+        <a href="https://beaver-den-cipa.pages.dev/">CIPA</a>
+        <a href="https://beaver-den-mspl.pages.dev/">MSPL</a>
+        <a href="https://beaver-den-mexico.pages.dev/">LFPDPPP</a>
+        <a href="https://beaver-den-consent-or-pay.pages.dev/" class="active">Consent or Pay</a>
+        <a href="https://beaver-den-age-verification.pages.dev/">Age Gate</a>
+        <a href="https://beaver-den-dsr.pages.dev/">DSR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="template-badge">TCF · Consent or Pay</span>
+    <h1>Sign in</h1>
+    <p class="page-intro">Subscribers sign in here to read the Gazette without ads or tracking.</p>
+
+    <form class="form-card" id="login-form" novalidate>
+      <label for="login-email">Email</label>
+      <input id="login-email" type="email" autocomplete="off" placeholder="you@example.com">
+      <label for="login-password">Password</label>
+      <input id="login-password" type="password" autocomplete="off">
+      <button class="btn" type="submit">Sign in</button>
+      <p class="form-status" id="login-status" role="status"></p>
+      <p class="fine-print">Sign-in is simulated on this test site. Nothing you type is sent or stored.</p>
+    </form>
+
+    <p class="fine-print">Not a subscriber yet? <a href="subscribe.html">Subscribe</a> ·
+      <a href="index.html">Back to the article</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p><strong>The Beaver Gazette</strong> — a demo site for testing consent management. Every page carries the
+      same six consent-requiring services, so the same page can be re-tested against each legal
+      template.</p>
+      <p>Beaver facts are real.
+      <a href="https://sofs9191.github.io/beaver-den/">Back to the lodge →</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var email = document.getElementById('login-email').value.trim();
+      document.getElementById('login-password').value = '';
+      document.getElementById('login-status').textContent = email
+        ? 'Signed in as ' + email + '.'
+        : 'Enter an email address to sign in.';
+    });
+  </script>
+</body>
+</html>

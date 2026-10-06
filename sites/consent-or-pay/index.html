@@ -3,11 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GDPR — The Beaver Gazette</title>
-  <meta name="description" content="Consent-first template for the EU/EEA: services stay blocked until the visitor opts in.">
+  <title>Consent or Pay — The Beaver Gazette</title>
+  <meta name="description" content="Read the Gazette with personalised ads, or subscribe for an ad-free site with no tracking.">
   <link rel="stylesheet" href="style.css">
 
-  <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="DcQZlnUgzpKhPL" async></script>
+  <!-- =====================================================================
+       PASTE THE CMP SCRIPT FOR THE "CONSENT OR PAY (TCF)" SETTING HERE
+       A TCF setting needs two tags: the TCF stub first, then the loader.
+       Use the same snippet on index.html, login.html and subscribe.html.
+
+       It belongs in <head>, before any other script.
+       ===================================================================== -->
 
 </head>
 <body>
@@ -17,7 +23,7 @@
       <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
       <nav class="site-nav">
         <a href="https://sofs9191.github.io/beaver-den/">Home</a>
-        <a href="https://beaver-den.pages.dev/" class="active">GDPR</a>
+        <a href="https://beaver-den.pages.dev/">GDPR</a>
         <a href="https://beaver-den-tcf.pages.dev/">TCF</a>
         <a href="https://beaver-den-uk-gdpr.pages.dev/">UK GDPR</a>
         <a href="https://beaver-den-uk-tcf.pages.dev/">UK TCF</a>
@@ -25,7 +31,7 @@
         <a href="https://beaver-den-cipa.pages.dev/">CIPA</a>
         <a href="https://beaver-den-mspl.pages.dev/">MSPL</a>
         <a href="https://beaver-den-mexico.pages.dev/">LFPDPPP</a>
-        <a href="https://beaver-den-consent-or-pay.pages.dev/">Consent or Pay</a>
+        <a href="https://beaver-den-consent-or-pay.pages.dev/" class="active">Consent or Pay</a>
         <a href="https://beaver-den-age-verification.pages.dev/">Age Gate</a>
         <a href="https://beaver-den-dsr.pages.dev/">DSR</a>
       </nav>
@@ -33,24 +39,53 @@
   </header>
 
   <main>
-    <span class="template-badge">GDPR · European Union</span>
-    <h1>Europe's comeback rodent: the return of <em>Castor fiber</em></h1>
-    <p class="page-intro">A century ago you could have counted every beaver in Europe. Today they are back in almost every EU member state — and they brought their chainsaw teeth with them.</p>
+    <div class="account-bar">
+      <a href="login.html">Sign in</a>
+      <a href="subscribe.html">Subscribe</a>
+    </div>
+    <span class="template-badge">TCF · Consent or Pay</span>
+    <h1>Read with ads, or go ad-free</h1>
+    <p class="page-intro">Accept personalised advertising to keep reading for free, or subscribe for
+      an ad-free Gazette with no tracking.</p>
 
     <div class="cmp-note">
-      <strong>Consent test page — GDPR (General Data Protection Regulation).</strong> Consent-first template for the EU/EEA: services stay blocked until the visitor opts in.
+      <strong>Consent test page — TCF Consent or Pay.</strong> Visitors either consent to advertising
+      under the IAB Transparency &amp; Consent Framework, or subscribe for ad-free access.
     </div>
 
     <h2>Beaver facts</h2>
     <div class="facts">
       <ul>
-        <li>By the early 1900s the European beaver (<em>Castor fiber</em>) had been hunted down to roughly 1,200 animals in eight scattered relict populations.</li>
-        <li>Coordinated reintroductions in Germany, France, Poland, the Netherlands and Scandinavia have since pushed the European population back above a million.</li>
-        <li>European beavers are slightly narrower in the tail and less prolific dam-builders than their North American cousins — they often prefer to simply dig a bank burrow.</li>
-        <li>A beaver lodge is a multi-generational household: parents, this year's kits and last year's yearlings all overwinter together.</li>
-        <li>Beavers are a keystone species: their ponds create wetland habitat for amphibians, dragonflies, wading birds and fish nurseries.</li>
+        <li>In the Hudson's Bay Company's fur trade, a <em>made beaver</em> — one prime, fully prepared pelt — was the unit of account. Kettles, blankets and guns were all priced in made beaver.</li>
+        <li>In the 1850s the company even struck brass tokens denominated in made beaver.</li>
+        <li>Beaver underfur has tiny barbs that lock together when pressed, which is why it made the densest, most waterproof felt for hats.</li>
+        <li>When silk top hats replaced beaver felt in the mid-1800s, demand for pelts collapsed, giving beaver populations room to recover.</li>
       </ul>
     </div>
+
+    <h2>Advertising</h2>
+    <p class="page-intro">Two ad slots served by Google Ad Manager, a TCF vendor.</p>
+    <div class="ad-grid">
+      <div class="ad-slot">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-unit" id="ad-slot-1"></div>
+      </div>
+      <div class="ad-slot">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-unit" id="ad-slot-2"></div>
+      </div>
+    </div>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'ad-slot-1').addService(googletag.pubads());
+        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'ad-slot-2').addService(googletag.pubads());
+        googletag.enableServices();
+        googletag.display('ad-slot-1');
+        googletag.display('ad-slot-2');
+      });
+    </script>
 
     <h2>Services that require consent</h2>
     <p class="page-intro">Six third-party services, embedded the ordinary way. Blocking them
@@ -63,8 +98,8 @@
         <span class="consent-tag">Marketing</span>
       </div>
       <p class="service-desc">Our featured beaver documentary of the week, embedded from YouTube.</p>
-      <div class="embed-slot" id="gdpr-youtube">
-        <iframe height="215" src="https://www.youtube.com/embed/iyNA62FrKCE" title="Beaver documentary"
+      <div class="embed-slot" id="consent-or-pay-youtube">
+        <iframe height="215" src="https://www.youtube.com/embed/aDbIAy9sMHk" title="Beaver documentary"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen loading="lazy"></iframe>
       </div>
@@ -76,7 +111,7 @@
         <span class="consent-tag">Functional</span>
       </div>
       <p class="service-desc">Where the world's largest beaver dam sits, in Wood Buffalo National Park, Alberta.</p>
-      <div class="embed-slot" id="gdpr-maps">
+      <div class="embed-slot" id="consent-or-pay-maps">
         <iframe height="215" src="https://maps.google.com/maps?q=58.271965,-112.246432&amp;z=13&amp;hl=en&amp;output=embed" title="World's largest beaver dam"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -88,14 +123,14 @@
         <span class="consent-tag">Functional</span>
       </div>
       <p class="service-desc">Find beaver lodges and dams near you using your device location.</p>
-      <div class="embed-slot" id="gdpr-geo">
+      <div class="embed-slot" id="consent-or-pay-geo">
         <!-- Browser geolocation is a browser API rather than a third-party script, so the CMP
              cannot block it for you. Gate it on a consent check, e.g.:
                var ok = window.UC_UI && window.UC_UI.getServicesBaseInfo()
                  .find(function (s) { return s.name === 'Browser Geolocation'; }).consent.status;
              See script.js -> requestLocation(). -->
-        <button class="geo-btn" data-geo-for="gdpr-geo">Find dams near me</button>
-        <p class="geo-output" id="gdpr-geo-output"></p>
+        <button class="geo-btn" data-geo-for="consent-or-pay-geo">Find dams near me</button>
+        <p class="geo-output" id="consent-or-pay-geo-output"></p>
       </div>
     </article>
     <article class="service-card">
@@ -105,7 +140,7 @@
         <span class="consent-tag">Statistics</span>
       </div>
       <p class="service-desc">Tells us which beaver facts you read to the end. Purely so we can write more of them.</p>
-      <div class="embed-slot" id="gdpr-analytics">
+      <div class="embed-slot" id="consent-or-pay-analytics">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5837W9ZMF"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -124,7 +159,7 @@
         <span class="consent-tag">Marketing</span>
       </div>
       <p class="service-desc">Canada's official account on the world's largest beaver dam.</p>
-      <div class="embed-slot" id="gdpr-social">
+      <div class="embed-slot" id="consent-or-pay-social">
         <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The world&#39;s largest beaver dam was 850m long in Wood Buffalo National Park, <a href="https://x.com/hashtag/Alberta?src=hash&amp;ref_src=twsrc%5Etfw">#Alberta</a>. Happy <a href="https://x.com/hashtag/InternationalBeaverDay?src=hash&amp;ref_src=twsrc%5Etfw">#InternationalBeaverDay</a>! <a href="https://t.co/RBbeVqyJZV">pic.twitter.com/RBbeVqyJZV</a></p>&mdash; Canada (@Canada) <a href="https://x.com/Canada/status/718105523976085504?ref_src=twsrc%5Etfw">April 7, 2016</a></blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
@@ -136,7 +171,7 @@
         <span class="consent-tag">Functional</span>
       </div>
       <p class="service-desc">Ask our resident beaver expert a question. She answers mostly at dusk.</p>
-      <div class="embed-slot" id="gdpr-chat">
+      <div class="embed-slot" id="consent-or-pay-chat">
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="9d8bf734-9f1c-4b3b-a639-5d4ff8152118";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
         <p class="service-note">The chat bubble appears in the bottom-right corner of the page.</p>
       </div>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscribe — The Beaver Gazette</title>
+  <meta name="description" content="Subscribe to read the Gazette with no ads and no tracking.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =====================================================================
+       PASTE THE CMP SCRIPT FOR THE "CONSENT OR PAY (TCF)" SETTING HERE
+       A TCF setting needs two tags: the TCF stub first, then the loader.
+       Use the same snippet on index.html, login.html and subscribe.html.
+
+       It belongs in <head>, before any other script.
+       ===================================================================== -->
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1 class="site-title"><a href="https://sofs9191.github.io/beaver-den/">🦫 The Beaver Gazette</a></h1>
+      <p class="site-tagline">Dam fine journalism for beaver aficionados since 1876</p>
+      <nav class="site-nav">
+        <a href="https://sofs9191.github.io/beaver-den/">Home</a>
+        <a href="https://beaver-den.pages.dev/">GDPR</a>
+        <a href="https://beaver-den-tcf.pages.dev/">TCF</a>
+        <a href="https://beaver-den-uk-gdpr.pages.dev/">UK GDPR</a>
+        <a href="https://beaver-den-uk-tcf.pages.dev/">UK TCF</a>
+        <a href="https://beaver-den-pipeda.pages.dev/">PIPEDA</a>
+        <a href="https://beaver-den-cipa.pages.dev/">CIPA</a>
+        <a href="https://beaver-den-mspl.pages.dev/">MSPL</a>
+        <a href="https://beaver-den-mexico.pages.dev/">LFPDPPP</a>
+        <a href="https://beaver-den-consent-or-pay.pages.dev/" class="active">Consent or Pay</a>
+        <a href="https://beaver-den-age-verification.pages.dev/">Age Gate</a>
+        <a href="https://beaver-den-dsr.pages.dev/">DSR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="template-badge">TCF · Consent or Pay</span>
+    <h1>Go ad-free</h1>
+    <p class="page-intro">Read every Gazette article with no ads and no tracking.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <h3>Monthly</h3>
+        <p class="plan-price">€2.99 <span>/ month</span></p>
+        <ul>
+          <li>No ads</li>
+          <li>No tracking</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <button class="btn" type="button" data-plan="Monthly">Subscribe</button>
+      </div>
+      <div class="plan-card featured">
+        <h3>Annual</h3>
+        <p class="plan-price">€29.99 <span>/ year</span></p>
+        <ul>
+          <li>No ads</li>
+          <li>No tracking</li>
+          <li>Two months free</li>
+        </ul>
+        <button class="btn" type="button" data-plan="Annual">Subscribe</button>
+      </div>
+    </div>
+    <p class="form-status" id="plan-status" role="status"></p>
+
+    <p class="fine-print">Subscriptions are simulated on this test site, so nothing is charged.
+      Already subscribed? <a href="login.html">Sign in</a> · <a href="index.html">Back to the article</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p><strong>The Beaver Gazette</strong> — a demo site for testing consent management. Every page carries the
+      same six consent-requiring services, so the same page can be re-tested against each legal
+      template.</p>
+      <p>Beaver facts are real.
+      <a href="https://sofs9191.github.io/beaver-den/">Back to the lodge →</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-plan]');
+      if (!button) return;
+      document.getElementById('plan-status').textContent =
+        button.getAttribute('data-plan') + ' plan selected. This is where the publisher\u2019s checkout would open.';
+    });
+  </script>
+</body>
+</html>

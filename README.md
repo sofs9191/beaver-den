@@ -28,6 +28,9 @@ CMP's job, not the markup's.
 | CIPA | `sites/cipa/` | `beaver-den-cipa.pages.dev` |
 | MSPL | `sites/mspl/` | `beaver-den-mspl.pages.dev` |
 | LFPDPPP (Mexico) | `sites/mexico/` | `beaver-den-mexico.pages.dev` |
+| Consent or Pay (TCF) | `sites/consent-or-pay/` | `beaver-den-consent-or-pay.pages.dev` |
+| Age Verification | `sites/age-verification/` | `beaver-den-age-verification.pages.dev` |
+| DSR | `sites/dsr/` | `beaver-den-dsr.pages.dev` |
 
 Each folder is self-contained, with its own `index.html`, `style.css` and `script.js`. That keeps a
 scan of one site limited to that site plus its six services.
@@ -51,10 +54,24 @@ Create one Pages project per template, all connected to this repo:
    - Framework preset: **None**, with the build command left **empty**
    - Build output directory: `sites/<slug>`
 
-Every push to `main` then redeploys all eight.
+Every push to `main` then redeploys all of them.
 
 If Cloudflare appends a suffix because a project name is taken, update the nav and hub links to
 the real hostname.
+
+## Feature-test sites
+
+These three test CMP features rather than a legal template. Each has the usual six services.
+
+- **Consent or Pay (TCF):** an article with two Google Ad Manager slots, using Google's public sample
+  ad unit `/6355419/Travel/Europe`. It also has `login.html` (simulated sign-in) and
+  `subscribe.html` (plan picker). Neither page sends, stores or charges anything; the real
+  subscription flow is the publisher's. The CMP snippet is the TCF stub plus the loader, and it goes
+  on all three pages.
+- **Age Verification:** the age gate is configured in the CMP admin (Appearance → Layout → Age
+  Verification Gate), so the page only needs the loader. Use `/under-age` as the gate's redirect
+  target. That page loads no CMP, no third parties and no links.
+- **DSR:** a privacy-rights page with a marked spot for the DSR form snippet.
 
 ## Financial services (Mexico only)
 
