@@ -699,3 +699,8 @@ blockquote.twitter-tweet a {
   min-height: 120px;
   margin-top: 1.5rem;
 }
+
+.dsr-form a.btn {
+  display: inline-block;
+  text-decoration: none;
+}
